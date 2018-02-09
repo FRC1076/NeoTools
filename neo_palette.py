@@ -13,21 +13,21 @@ def test_initialized_palette():
 def test_single_color_add():
     pal = NeoPalette()
     pal.color_index(10)
-    assert(pal.n_colors == 2)
+    assert(pal.n_colors() == 2)
 
 def test_dupli_color_add():
     pal = NeoPalette()
     assert(pal.color_index(10) == 1)
-    assert(pal.n_colors == 2)
+    assert(pal.n_colors() == 2)
     assert(pal.color_index(5) == 2)
-    assert(pal.n_colors == 3)
+    assert(pal.n_colors() == 3)
 
 def test_multi_color_add():
     pal = NeoPalette()
     for c in [0, 10, 50, 75]:
         pal.color_index(c)
     assert(pal.color_index(75) == 3)
-    assert(pal.n_colors == 4)
+    assert(pal.n_colors() == 4)
 
 def test_multi_dupli_color_add():
     pal = NeoPalette()
