@@ -47,6 +47,9 @@ def combiner(values):
 #  the NeoPixel color function (see color.py TDD project)
 #
 #
+def test_empty_list():
+    assert(collapse_planes([]) == [])
+    
 def test_single_collapse():
     assert(collapse_planes([0,0,0,0]) == [0])
 
