@@ -9,14 +9,15 @@ parser.add_argument('png_filename', type=str, nargs=1,
                    help='The name of the file to convert')
 args = parser.parse_args()
 
+import pdb; pdb.set_trace()
 
 # Now let's read in the file
-reader=png.Reader(args.png_filename)
+reader=png.Reader(args.png_filename[0])
 img_def=reader.read()
 
 n_columns = img_def[0]
 n_rows = img_def[1]
-image = img_def[2]
+image = list(img_def[2])       #  convert the iterator to a list (to print later)
 n_planes = img_def[3]['planes']
 
 print("There are {} columns of pixels in the image".format(n_columns))
