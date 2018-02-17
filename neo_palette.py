@@ -71,7 +71,6 @@ class NeoPalette:
         Empty palette always has a single color (off) at index 0
         """
         self._colors = [0]
-        self._num_colors = 1
 
     def color_index(self, neo_color):
         """
@@ -81,8 +80,7 @@ class NeoPalette:
         """
         
         try:
-            ci = self._colors.index(neo_color)
-            return ci
+            return self._colors.index(neo_color)
         except ValueError:
             self._colors.append(neo_color)
             return len(self._colors)-1
